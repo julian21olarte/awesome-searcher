@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Awesome Searcher by BoatyardX
+
+This is a [Next.js](https://nextjs.org/) project built using React + Typescript and Material-UI created for BoatyardX coding challenge.
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
 
 ```bash
-npm run dev
-# or
+yarn
+```
+
+Next, run the development server:
+
+```bash
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Scope
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+You can find all custom components in `/components` folder.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You will see a `/components/SearchInput` custom component to create the search input required by the startup.
 
-## Learn More
+You can see that this project only contains one Homepage in `/pages/index` showing 3 examples of the `SearchInput` using multiple data sources and styles:
 
-To learn more about Next.js, take a look at the following resources:
+- `/components/LangsSearchInput`
+- `/components/FrameworksSearchInput`
+- `/components/SuperherosSearchInput`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+These components use and extend the generic input search to create more customized search inputs using different sources of data.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+A simple search API service was built in `/services/search` to simulate requests to the search algorithm.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Also a custom hook was defined to consume and handle the search algorithm service in every search component, you can find it in `/hooks/useSearch` folder.
